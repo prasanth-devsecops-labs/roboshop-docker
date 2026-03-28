@@ -1,5 +1,5 @@
-FROM python:3
-RUN dnf install gcc python3-devel
+FROM almalinux:9
+RUN dnf install -y python3 python3-devel gcc && dnf clean all
 WORKDIR /app
 COPY payment.ini payment.py rabbitmq.py requirements.txt /app/
 RUN pip3 install -r requirements.txt
