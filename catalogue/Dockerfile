@@ -11,7 +11,8 @@ COPY --from=builder /app /app
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 RUN chown -R roboshop:roboshop /app
 USER roboshop
-CMD ["node", "server.js"]
+CMD ["server.js"]
+ENTRYPOINT [ "node" ]
 
 
 # FROM node:20
